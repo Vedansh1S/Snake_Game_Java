@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class tutorial {
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Snake Game");
+        JFrame frame = new JFrame("🐍 Snake Game by Vedansh");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.add(new GamePanel());
