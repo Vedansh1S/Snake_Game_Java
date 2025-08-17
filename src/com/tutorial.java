@@ -159,6 +159,17 @@ class GamePanel extends JPanel implements ActionListener, KeyListener {
         } else {
             if (key == KeyEvent.VK_SPACE) startGame();
         }
+
+        if (key == KeyEvent.VK_P) {
+    if (running) {
+        if (timer.isRunning()) {
+            timer.stop();  // Pause
+        } else {
+            timer.start(); // Resume
+        }
+    }
+}
+
     }
 
     @Override public void keyReleased(KeyEvent e) {}
