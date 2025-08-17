@@ -33,6 +33,7 @@ class GamePanel extends JPanel implements ActionListener, KeyListener {
     private int score;
     private Timer timer;
     private Random rand;
+    private int highScore = 0;
 
     public GamePanel() {
         setPreferredSize(new Dimension(GAME_WIDTH * TILE_SIZE, GAME_HEIGHT * TILE_SIZE));
@@ -123,6 +124,10 @@ class GamePanel extends JPanel implements ActionListener, KeyListener {
     private void gameOver() {
         running = false;
         timer.stop();
+        if (score > highScore) {
+            highScore = score;
+        }
+
     }
 
     @Override
@@ -147,6 +152,7 @@ class GamePanel extends JPanel implements ActionListener, KeyListener {
             g.setColor(Color.WHITE);
             g.setFont(new Font("Arial", Font.BOLD, 16));
             g.drawString("Score: " + score, 10, 20);
+            g.drawString("High Score: " + highScore, getWidth() - 150, 20);
 
         } else {
             // Game Over Screen
