@@ -21,7 +21,7 @@ public class tutorial {
 class GamePanel extends JPanel implements ActionListener, KeyListener {
     // Game settings
     private final int TILE_SIZE = 25;
-    private final int GAME_WIDTH = 25;  // in tiles
+    private final int GAME_WIDTH = 25; // in tiles
     private final int GAME_HEIGHT = 25;
     private final int START_DELAY = 150; // ms
 
@@ -41,6 +41,7 @@ class GamePanel extends JPanel implements ActionListener, KeyListener {
         addKeyListener(this);
         rand = new Random();
         startGame();
+
     }
 
     public void startGame() {
@@ -76,10 +77,18 @@ class GamePanel extends JPanel implements ActionListener, KeyListener {
     private void move() {
         Point head = new Point(snake.get(0));
         switch (direction) {
-            case 'U': head.y -= 1; break;
-            case 'D': head.y += 1; break;
-            case 'L': head.x -= 1; break;
-            case 'R': head.x += 1; break;
+            case 'U':
+                head.y -= 1;
+                break;
+            case 'D':
+                head.y += 1;
+                break;
+            case 'L':
+                head.x -= 1;
+                break;
+            case 'R':
+                head.x += 1;
+                break;
         }
         snake.add(0, head);
 
@@ -127,8 +136,10 @@ class GamePanel extends JPanel implements ActionListener, KeyListener {
 
             // Draw snake
             for (int i = 0; i < snake.size(); i++) {
-                if (i == 0) g.setColor(Color.GREEN); // head
-                else g.setColor(new Color(0, 150, 0)); // body
+                if (i == 0)
+                    g.setColor(Color.GREEN); // head
+                else
+                    g.setColor(new Color(0, 150, 0)); // body
                 g.fillRect(snake.get(i).x * TILE_SIZE, snake.get(i).y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
             }
 
@@ -152,26 +163,36 @@ class GamePanel extends JPanel implements ActionListener, KeyListener {
     public void keyPressed(KeyEvent e) {
         int key = e.getKeyCode();
         if (running) {
-            if (key == KeyEvent.VK_UP && direction != 'D') direction = 'U';
-            if (key == KeyEvent.VK_DOWN && direction != 'U') direction = 'D';
-            if (key == KeyEvent.VK_LEFT && direction != 'R') direction = 'L';
-            if (key == KeyEvent.VK_RIGHT && direction != 'L') direction = 'R';
+            if (key == KeyEvent.VK_UP && direction != 'D')
+                direction = 'U';
+            if (key == KeyEvent.VK_DOWN && direction != 'U')
+                direction = 'D';
+            if (key == KeyEvent.VK_LEFT && direction != 'R')
+                direction = 'L';
+            if (key == KeyEvent.VK_RIGHT && direction != 'L')
+                direction = 'R';
         } else {
-            if (key == KeyEvent.VK_SPACE) startGame();
+            if (key == KeyEvent.VK_SPACE)
+                startGame();
         }
 
         if (key == KeyEvent.VK_P) {
-    if (running) {
-        if (timer.isRunning()) {
-            timer.stop();  // Pause
-        } else {
-            timer.start(); // Resume
+            if (running) {
+                if (timer.isRunning()) {
+                    timer.stop(); // Pause
+                } else {
+                    timer.start(); // Resume
+                }
+            }
         }
-    }
-}
 
     }
 
-    @Override public void keyReleased(KeyEvent e) {}
-    @Override public void keyTyped(KeyEvent e) {}
+    @Override
+    public void keyReleased(KeyEvent e) {
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+    }
 }
