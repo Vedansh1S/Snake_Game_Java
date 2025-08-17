@@ -20,3 +20,12 @@ The classic arcade game where you control a snake to eat food, grow longer, and 
    ```bash
    git clone https://github.com/your-username/snake-game-java.git
    cd snake-game-java
+
+2. Compile the code:
+
+   ```bash
+   javac SnakeGame.java
+
+3. Run the game:
+   ```bash
+   java SnakeGame
