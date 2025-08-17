@@ -15,6 +15,13 @@ The classic arcade game where you control a snake to eat food, grow longer, and 
 
 ---
 
+🎮 Controls
+
+- Arrow Keys → Move snake (Up, Down, Left, Right)
+- SPACE → Restart after Game Over
+
+---
+
 ## 🚀 How to Run
 1. Clone this repository:
    ```bash
@@ -29,3 +36,4 @@ The classic arcade game where you control a snake to eat food, grow longer, and 
 3. Run the game:
    ```bash
    java SnakeGame
+
